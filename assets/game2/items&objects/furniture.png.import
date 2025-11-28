@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di122dheobk5a"
-path="res://.godot/imported/Tilled_Dirt_Wide_v2.png-7067f0efaf3edd0774b7efe07207a7d3.ctex"
+uid="uid://dvcrglyd6u1xo"
+path="res://.godot/imported/furniture.png-caec7d3e63635922be9c24a3a66b767c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/game/Tilesets/Tilled_Dirt_Wide_v2.png"
-dest_files=["res://.godot/imported/Tilled_Dirt_Wide_v2.png-7067f0efaf3edd0774b7efe07207a7d3.ctex"]
+source_file="res://assets/game2/items&objects/furniture.png"
+dest_files=["res://.godot/imported/furniture.png-caec7d3e63635922be9c24a3a66b767c.ctex"]
 
 [params]
 

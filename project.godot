@@ -23,8 +23,10 @@ window/stretch/scale_mode="integer"
 [file_customization]
 
 folder_colors={
-"res://assets/": "blue",
-"res://scenes/": "blue"
+"res://TileSets/": "green",
+"res://assets/": "red",
+"res://character/": "orange",
+"res://scenes/": "yellow"
 }
 
 [rendering]

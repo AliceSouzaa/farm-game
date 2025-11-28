@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diffck045lgp8"
-path="res://.godot/imported/Tilled_Dirt.png-4f3cb68bb0afdb5785f4d7f210a80d9b.ctex"
+uid="uid://bkirgq5dkgnte"
+path="res://.godot/imported/blue mushroom sheet.png-071ee6d8802f92b1553dc60e76a1b7df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/game/Tilesets/Tilled_Dirt.png"
-dest_files=["res://.godot/imported/Tilled_Dirt.png-4f3cb68bb0afdb5785f4d7f210a80d9b.ctex"]
+source_file="res://assets/game2/characters/mushrooms/blue mushroom sheet.png"
+dest_files=["res://.godot/imported/blue mushroom sheet.png-071ee6d8802f92b1553dc60e76a1b7df.ctex"]
 
 [params]
 

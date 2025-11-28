@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgtnuveh4n5rx"
-path="res://.godot/imported/Bitmask references 2.png-8fc92b3f72e43b538e144791ac171e83.ctex"
+uid="uid://cpnd6rcsa66de"
+path="res://.godot/imported/objects.png-27157e16971400500bce31caa1fd58d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/game/Tilesets/Bitmask references 2.png"
-dest_files=["res://.godot/imported/Bitmask references 2.png-8fc92b3f72e43b538e144791ac171e83.ctex"]
+source_file="res://assets/game2/items&objects/objects.png"
+dest_files=["res://.godot/imported/objects.png-27157e16971400500bce31caa1fd58d5.ctex"]
 
 [params]
 

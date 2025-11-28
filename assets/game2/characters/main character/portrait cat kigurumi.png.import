@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r3cpgb155e1d"
-path="res://.godot/imported/Tilled_Dirt_v2.png-b6f46d0e94755dd55b2bd0f6ad5b52d5.ctex"
+uid="uid://d2sf6x4ig2ogr"
+path="res://.godot/imported/portrait cat kigurumi.png-b317471f17768fd031e3d434aa39de9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/game/Tilesets/Tilled_Dirt_v2.png"
-dest_files=["res://.godot/imported/Tilled_Dirt_v2.png-b6f46d0e94755dd55b2bd0f6ad5b52d5.ctex"]
+source_file="res://assets/game2/characters/main character/portrait cat kigurumi.png"
+dest_files=["res://.godot/imported/portrait cat kigurumi.png-b317471f17768fd031e3d434aa39de9b.ctex"]
 
 [params]
 

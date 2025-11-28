@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://cin38dohmg8nu"]
+
+[ext_resource type="PackedScene" uid="uid://u6ht1lsq3o3j" path="res://scenes/home_scene.tscn" id="1_e58y5"]
+[ext_resource type="PackedScene" uid="uid://s2yflbb2r8ry" path="res://character/character.tscn" id="2_8d05g"]
+[ext_resource type="Script" uid="uid://dkt7athwv3mr0" path="res://scenes/mainscene/tomato.gd" id="3_mm7xw"]
+[ext_resource type="Texture2D" uid="uid://dkhugowgnuvim" path="res://assets/game/Objects/Basic Plants.png" id="4_idupl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wm2vb"]
+atlas = ExtResource("4_idupl")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytmgq"]
+atlas = ExtResource("4_idupl")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsphc"]
+atlas = ExtResource("4_idupl")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypgmv"]
+atlas = ExtResource("4_idupl")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sauq6"]
+atlas = ExtResource("4_idupl")
+region = Rect2(80, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3fy1p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wm2vb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytmgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsphc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypgmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sauq6")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.5
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xmllc"]
+size = Vector2(15, 16)
+
+[node name="MainScene" type="Node2D"]
+
+[node name="Home_scene" parent="." instance=ExtResource("1_e58y5")]
+position = Vector2(11, 9)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(328, 176)
+zoom = Vector2(2, 2)
+
+[node name="CharacterBody2D" parent="Camera2D" instance=ExtResource("2_8d05g")]
+position = Vector2(-21, -63)
+
+[node name="tomato" type="Area2D" parent="."]
+position = Vector2(27, -26)
+script = ExtResource("3_mm7xw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="tomato"]
+position = Vector2(105, 213)
+sprite_frames = SubResource("SpriteFrames_3fy1p")
+frame = 4
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tomato"]
+position = Vector2(105, 213)
+shape = SubResource("RectangleShape2D_xmllc")
