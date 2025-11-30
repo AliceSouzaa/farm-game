@@ -25,4 +25,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_right"):
 		$AnimatedSprite2D.play("walk_right")
 	
+
+
+func _on_seed_body_entered(body: Node2D) -> void:
+		FarmingSystemGlobal.seed += 1
+	
 	
