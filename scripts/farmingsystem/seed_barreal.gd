@@ -6,8 +6,9 @@ func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
-	if isnearb == true and Input.is_action_just_pressed("click_right"):
-		FarmingSystemGlobal.seed +=1
+	if isnearb == true and Input.is_action_just_pressed("click_left"):
+		Globalvar.seed +=1
+		Globalvar.cornseed += 1
 
 
 func _on_body_entered(body: Node2D) -> void:

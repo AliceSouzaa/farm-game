@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://cg6fq84scc5m6"]
+[gd_scene load_steps=13 format=3 uid="uid://cg6fq84scc5m6"]
 
-[ext_resource type="Script" uid="uid://dkt7athwv3mr0" path="res://scenes/mainscene/tomato.gd" id="1_joa5w"]
+[ext_resource type="Script" uid="uid://dkt7athwv3mr0" path="res://scripts/farmingsystem/tomato.gd" id="1_joa5w"]
 [ext_resource type="Texture2D" uid="uid://bsiycqeegcx4k" path="res://assets/game2/items&objects/Crop_Spritesheet.png" id="2_bka0x"]
+[ext_resource type="Script" uid="uid://cxfktwxs6oo8o" path="res://scripts/farmingsystem/pickedcorn.gd" id="3_1ldso"]
+[ext_resource type="Script" uid="uid://c13pxt0fhhgfl" path="res://label_3.gd" id="4_kg4fp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_joa5w"]
 atlas = ExtResource("2_bka0x")
@@ -71,7 +73,24 @@ shape = SubResource("RectangleShape2D_ilmb5")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_right = 40.0
+offset_right = 44.0
 offset_bottom = 23.0
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_top = 18.0
+offset_right = 42.0
+offset_bottom = 41.0
+
+[node name="pickedcorn" type="Label" parent="CanvasLayer"]
+offset_top = 41.0
+offset_right = 40.0
+offset_bottom = 64.0
+script = ExtResource("3_1ldso")
+
+[node name="Label3" type="Label" parent="CanvasLayer"]
+offset_top = 81.0
+offset_right = 40.0
+offset_bottom = 104.0
+script = ExtResource("4_kg4fp")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

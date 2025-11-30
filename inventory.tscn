@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://dou4ebpam70k"]
+
+[ext_resource type="Texture2D" uid="uid://66mi5eh7jt2y" path="res://menu.png" id="1_pohso"]
+[ext_resource type="Script" uid="uid://1u10hiedxhyi" path="res://inventory.gd" id="1_psafj"]
+[ext_resource type="Texture2D" uid="uid://lb4q84g6h33s" path="res://assets/game2/characters/main character/portrait female.png" id="3_5tt2m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_psafj"]
+font_size = 7
+font_color = Color(0.28464228, 0.19455007, 0.11030633, 1)
+shadow_size = 12
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5tt2m"]
+size = Vector2(226.5, 6)
+
+[node name="inventory" type="Area2D"]
+script = ExtResource("1_psafj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 509.0
+offset_top = 481.0
+offset_right = 549.0
+offset_bottom = 521.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect"]
+position = Vector2(39.286793, 21.261314)
+scale = Vector2(0.24772134, 0.2675425)
+texture = ExtResource("1_pohso")
+region_rect = Rect2(39.193207, 25.574112, 993.4729, 532.845)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = -61.0
+offset_top = 17.0
+offset_right = 88.0
+offset_bottom = 59.0
+text = "INVENTARIO"
+label_settings = SubResource("LabelSettings_psafj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ColorRect"]
+position = Vector2(-44.000015, -9.000011)
+scale = Vector2(0.62499905, 0.6718756)
+texture = ExtResource("3_5tt2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(547.75, 442)
+shape = SubResource("RectangleShape2D_5tt2m")

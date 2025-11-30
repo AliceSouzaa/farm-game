@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://dwikxkgbmo2ir"]
+
+[ext_resource type="Script" uid="uid://c1oo4jby0ms27" path="res://scripts/farmingsystem/corn.gd" id="1_tbhtn"]
+[ext_resource type="Texture2D" uid="uid://bsiycqeegcx4k" path="res://assets/game2/items&objects/Crop_Spritesheet.png" id="2_08v5v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpnr7"]
+atlas = ExtResource("2_08v5v")
+region = Rect2(80, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlh6f"]
+atlas = ExtResource("2_08v5v")
+region = Rect2(64, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pep1m"]
+atlas = ExtResource("2_08v5v")
+region = Rect2(48, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkew2"]
+atlas = ExtResource("2_08v5v")
+region = Rect2(32, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c4hu"]
+atlas = ExtResource("2_08v5v")
+region = Rect2(16, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17w8v"]
+atlas = ExtResource("2_08v5v")
+region = Rect2(0, 144, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e80lc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpnr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlh6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pep1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkew2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4c4hu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17w8v")
+}],
+"loop": true,
+"name": &"corn",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_18l8l"]
+size = Vector2(31.125, 24.75)
+
+[node name="corn" type="Area2D"]
+script = ExtResource("1_tbhtn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(13, 9)
+scale = Vector2(0.9062499, 0.96874994)
+sprite_frames = SubResource("SpriteFrames_e80lc")
+animation = &"corn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(14, 10)
+shape = SubResource("RectangleShape2D_18l8l")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

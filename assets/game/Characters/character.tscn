@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://drtavck3dfq4w"]
 
-[ext_resource type="Script" uid="uid://cevt1bms2vedt" path="res://scripts/character.gd" id="1_s6inh"]
+[ext_resource type="Script" uid="uid://cevt1bms2vedt" path="res://character/character.gd" id="1_s6inh"]
 [ext_resource type="Texture2D" uid="uid://uisukainvqf2" path="res://assets/game2/characters/main character/walk and idle.png" id="2_uhyca"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5wgsi"]
