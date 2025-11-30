@@ -6,23 +6,18 @@ const SPEED = 100.0
 
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		pass
-
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
+# setup direction of movement
+	var direction = Input.get_vector("left", "right", "up", "down")
+# stop diagonal movement by listening for input then setting axis to zero
+	if Input.is_action_pressed("right") || Input.is_action_pressed("left"):
+		direction.y = 0
+	elif Input.is_action_pressed("up") || Input.is_action_pressed("down"):
+		direction.x = 0
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		$AnimatedSprite2D.play("Idle")
-
-	move_and_slide()
+		direction = Vector2.ZERO
 	
-	if Input.is_action_just_pressed("ui_left"):
-		$AnimatedSprite2D.play("walk_left")
-		
-	if Input.is_action_just_pressed("ui_right"):
-		$AnimatedSprite2D.play("walk_right")
-	
-	
+#normalize the directional movement
+	direction = direction.normalized()
+# setup the actual movement
+	velocity = (direction * SPEED)
+	move_and_slide() 
