@@ -7,7 +7,6 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if isnearb == true and Input.is_action_just_pressed("click_left"):
-		Globalvar.seed +=1
 		Globalvar.cornseed += 1
 
 

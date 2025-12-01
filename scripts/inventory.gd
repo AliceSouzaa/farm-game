@@ -9,7 +9,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	$Label2.text = str(Globalvar.money)
 
 func _input(event: InputEvent) -> void:
 	if isopen == false and Input.is_action_just_pressed("inventory"):
@@ -17,5 +17,5 @@ func _input(event: InputEvent) -> void:
 		isopen = true
 		
 	elif isopen == true and Input.is_action_just_pressed("inventory"):
-		$ColorRect.hide()
+		$ColorRect.visible = false
 		isopen = false

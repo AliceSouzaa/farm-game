@@ -2,9 +2,10 @@ extends Area2D
 
 var isnear = false
 var isplanted = false
+var pickveggies = false
 
 func _ready() -> void:
-	if isplanted == false:
+	if isplanted == false and pickveggies == false:
 		Globalvar.cornseed -=1
 		isplanted = true
 		show()
@@ -17,13 +18,13 @@ func _ready() -> void:
 		$AnimatedSprite2D.frame = 3
 		await get_tree().create_timer(3.0).timeout
 		$AnimatedSprite2D.frame = 5
-		Globalvar.pickveggies = true
+		pickveggies = true
 		isplanted = false
 
 
 func _process(delta: float) -> void:
 	
-	if Input.is_action_just_pressed("pickveggies") and Globalvar.pickveggies == true and isnear == true:
+	if Input.is_action_just_pressed("pickveggies") and pickveggies == true and isnear == true:
 		queue_free()
 		Globalvar.corn +=1
 

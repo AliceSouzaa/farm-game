@@ -1,96 +1,22 @@
-[gd_scene load_steps=13 format=3 uid="uid://cg6fq84scc5m6"]
+[gd_scene load_steps=4 format=3 uid="uid://cg6fq84scc5m6"]
 
 [ext_resource type="Script" uid="uid://dkt7athwv3mr0" path="res://scripts/farmingsystem/tomato.gd" id="1_joa5w"]
 [ext_resource type="Texture2D" uid="uid://bsiycqeegcx4k" path="res://assets/game2/items&objects/Crop_Spritesheet.png" id="2_bka0x"]
-[ext_resource type="Script" uid="uid://cxfktwxs6oo8o" path="res://scripts/farmingsystem/pickedcorn.gd" id="3_1ldso"]
-[ext_resource type="Script" uid="uid://c13pxt0fhhgfl" path="res://label_3.gd" id="4_kg4fp"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_joa5w"]
-atlas = ExtResource("2_bka0x")
-region = Rect2(80, 32, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bka0x"]
-atlas = ExtResource("2_bka0x")
-region = Rect2(64, 32, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kg4fp"]
-atlas = ExtResource("2_bka0x")
-region = Rect2(48, 32, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7xo0b"]
-atlas = ExtResource("2_bka0x")
-region = Rect2(32, 32, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qk7vq"]
-atlas = ExtResource("2_bka0x")
-region = Rect2(16, 32, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_14leh"]
-atlas = ExtResource("2_bka0x")
-region = Rect2(0, 32, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_4krpl"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_joa5w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bka0x")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kg4fp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7xo0b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qk7vq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_14leh")
-}],
-"loop": true,
-"name": &"tomato",
-"speed": 5.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ilmb5"]
 size = Vector2(34, 24.5)
 
 [node name="tomato" type="Area2D"]
+position = Vector2(14, 16)
 script = ExtResource("1_joa5w")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(27, 33)
-sprite_frames = SubResource("SpriteFrames_4krpl")
-animation = &"tomato"
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_bka0x")
+region_enabled = true
+region_rect = Rect2(78.67944, 30.586578, 17.959198, 18.248856)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(27, 35)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_ilmb5")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_right = 44.0
-offset_bottom = 23.0
-
-[node name="Label2" type="Label" parent="CanvasLayer"]
-offset_top = 18.0
-offset_right = 42.0
-offset_bottom = 41.0
-
-[node name="pickedcorn" type="Label" parent="CanvasLayer"]
-offset_top = 41.0
-offset_right = 40.0
-offset_bottom = 64.0
-script = ExtResource("3_1ldso")
-
-[node name="Label3" type="Label" parent="CanvasLayer"]
-offset_top = 81.0
-offset_right = 40.0
-offset_bottom = 104.0
-script = ExtResource("4_kg4fp")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

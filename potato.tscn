@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dgmhbtfwusek3"]
 
 [ext_resource type="Texture2D" uid="uid://bsiycqeegcx4k" path="res://assets/game2/items&objects/Crop_Spritesheet.png" id="1_5wy20"]
-[ext_resource type="Script" uid="uid://bpdb0i8uqldy7" path="res://potato.gd" id="1_rx63k"]
+[ext_resource type="Script" uid="uid://bpdb0i8uqldy7" path="res://scripts/farmingsystem/potato.gd" id="1_rx63k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rx63k"]
 atlas = ExtResource("1_5wy20")
