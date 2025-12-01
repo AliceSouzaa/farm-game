@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cin38dohmg8nu"]
+[gd_scene load_steps=5 format=3 uid="uid://cin38dohmg8nu"]
 
 [ext_resource type="PackedScene" uid="uid://u6ht1lsq3o3j" path="res://scenes/home_scene.tscn" id="1_e58y5"]
 [ext_resource type="Script" uid="uid://dt7cy1cvm2y3t" path="res://scenes/mainscene/main_scene.gd" id="1_idupl"]
 [ext_resource type="PackedScene" uid="uid://s2yflbb2r8ry" path="res://character/character.tscn" id="2_8d05g"]
+[ext_resource type="PackedScene" uid="uid://cxk66b8rmwped" path="res://scenes/seed_barreal.tscn" id="4_mm7xw"]
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_idupl")
@@ -17,3 +18,6 @@ position = Vector2(185, 182)
 [node name="Camera2D" type="Camera2D" parent="Home_scene/CharacterBody2D"]
 position = Vector2(136, -7)
 zoom = Vector2(2, 2)
+
+[node name="SeedBarreal" parent="." instance=ExtResource("4_mm7xw")]
+position = Vector2(394, 50)
