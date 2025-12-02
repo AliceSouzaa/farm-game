@@ -1,16 +1,46 @@
-[gd_scene load_steps=3 format=3 uid="uid://cin38dohmg8nu"]
 
-[ext_resource type="PackedScene" uid="uid://u6ht1lsq3o3j" path="res://scenes/home_scene.tscn" id="1_e58y5"]
-[ext_resource type="PackedScene" uid="uid://s2yflbb2r8ry" path="res://character/character.tscn" id="2_8d05g"]
+[gd_scene load_steps=9 format=3 uid="uid://cin38dohmg8nu"]
+
+
+[ext_resource type="PackedScene" uid="uid://dkl8uxsqpu3fb" path="res://scenes/house_scene.tscn" id="5_idupl"]
+[ext_resource type="PackedScene" uid="uid://bujw56mcjypt8" path="res://scenes/npc.tscn" id="6_wm2vb"]
+[ext_resource type="PackedScene" uid="uid://4m8fhwgas4xt" path="res://scenes/inventory.tscn" id="7_ytmgq"]
+[ext_resource type="PackedScene" uid="uid://dbi55daa0c5in" path="res://scenes/door.tscn" id="8_hsphc"]
+[ext_resource type="PackedScene" uid="uid://cxk66b8rmwped" path="res://scenes/seed_barreal.tscn" id="10_sauq6"]
+
 
 [node name="MainScene" type="Node2D"]
+position = Vector2(1, 0)
+script = ExtResource("1_idupl")
 
 [node name="Home_scene" parent="." instance=ExtResource("1_e58y5")]
-position = Vector2(6, 9)
+
+position = Vector2(195, 169)
 
 [node name="CharacterBody2D" parent="Home_scene" instance=ExtResource("2_8d05g")]
-position = Vector2(301, 104)
+z_index = 1
+position = Vector2(353, 233)
 
 [node name="Camera2D" type="Camera2D" parent="Home_scene/CharacterBody2D"]
-position = Vector2(21, 63)
+position = Vector2(136, -7)
 zoom = Vector2(2, 2)
+
+[node name="inventory" parent="Home_scene/CharacterBody2D" instance=ExtResource("7_ytmgq")]
+position = Vector2(-413, -398)
+
+[node name="npc" parent="Home_scene" instance=ExtResource("6_wm2vb")]
+position = Vector2(327, 147)
+
+[node name="door" parent="." instance=ExtResource("8_hsphc")]
+position = Vector2(626, 185)
+
+[node name="SeedBarreal" parent="." instance=ExtResource("10_sauq6")]
+position = Vector2(397, 229)
+
+[node name="house_scene" parent="." instance=ExtResource("5_idupl")]
+position = Vector2(8, -808)
+
+[connection signal="body_entered" from="Home_scene/npc" to="Home_scene/CharacterBody2D" method="_on_npc_body_entered"]
+[connection signal="body_exited" from="Home_scene/npc" to="Home_scene/CharacterBody2D" method="_on_npc_body_exited"]
+[connection signal="body_entered" from="door" to="Home_scene/CharacterBody2D" method="_on_door_body_entered"]
+

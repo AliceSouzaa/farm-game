@@ -1,0 +1,159 @@
+[gd_scene load_steps=22 format=3 uid="uid://bujw56mcjypt8"]
+
+[ext_resource type="Texture2D" uid="uid://bkirgq5dkgnte" path="res://assets/game2/characters/mushrooms/blue mushroom sheet.png" id="1_ideak"]
+[ext_resource type="Script" uid="uid://cskc6cr7bu70p" path="res://scripts/npc.gd" id="1_xxcha"]
+[ext_resource type="Texture2D" uid="uid://bdjkv3ujdyljj" path="res://assets/talk.webp" id="2_rv78h"]
+[ext_resource type="PackedScene" uid="uid://gg08eihg6ju1" path="res://scenes/storage.tscn" id="4_7n8xq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxcha"]
+atlas = ExtResource("1_ideak")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kh24r"]
+atlas = ExtResource("1_ideak")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul7y6"]
+atlas = ExtResource("1_ideak")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc6q4"]
+atlas = ExtResource("1_ideak")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcvl2"]
+atlas = ExtResource("1_ideak")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d61ma"]
+atlas = ExtResource("1_ideak")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slxoh"]
+atlas = ExtResource("1_ideak")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l64hl"]
+atlas = ExtResource("1_ideak")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_215dd"]
+atlas = ExtResource("1_ideak")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5bpe"]
+atlas = ExtResource("1_ideak")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upjdb"]
+atlas = ExtResource("1_ideak")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u41a8"]
+atlas = ExtResource("1_ideak")
+region = Rect2(80, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgete"]
+atlas = ExtResource("1_ideak")
+region = Rect2(96, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gu3sj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxcha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kh24r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ul7y6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bc6q4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcvl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d61ma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slxoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l64hl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_215dd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5bpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upjdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u41a8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgete")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rv78h"]
+font_size = 15
+font_color = Color(0.00011382803, 0.00011382803, 0.00011382803, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ul7y6"]
+font_size = 25
+font_color = Color(0.011087579, 0.011087578, 0.01108758, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ideak"]
+size = Vector2(71, 61)
+
+[node name="npc" type="Area2D"]
+script = ExtResource("1_xxcha")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(22, 22)
+sprite_frames = SubResource("SpriteFrames_gu3sj")
+autoplay = "default"
+frame_progress = 0.7460658
+
+[node name="Sprite2D2" type="Sprite2D" parent="AnimatedSprite2D"]
+position = Vector2(34, -25.000004)
+scale = Vector2(0.36999997, 0.43820226)
+texture = ExtResource("2_rv78h")
+
+[node name="Label2" type="Label" parent="AnimatedSprite2D/Sprite2D2"]
+offset_left = -75.67568
+offset_top = -34.23076
+offset_right = 81.32432
+offset_bottom = 14.769241
+text = "parece que você está 
+sem produtos : ("
+label_settings = SubResource("LabelSettings_rv78h")
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatedSprite2D"]
+position = Vector2(39.312508, -16.195004)
+scale = Vector2(0.28687495, 0.28775275)
+texture = ExtResource("2_rv78h")
+
+[node name="Label" type="Label" parent="AnimatedSprite2D/Sprite2D"]
+offset_left = -63.83446
+offset_top = -30.599174
+offset_right = 61.16554
+offset_bottom = 4.4008255
+text = "	quer algo?"
+label_settings = SubResource("LabelSettings_ul7y6")
+
+[node name="Area2D" parent="AnimatedSprite2D" instance=ExtResource("4_7n8xq")]
+position = Vector2(-47, -208)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(42.5, 42.5)
+shape = SubResource("RectangleShape2D_ideak")

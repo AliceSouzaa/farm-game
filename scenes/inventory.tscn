@@ -1,0 +1,224 @@
+[gd_scene load_steps=27 format=3 uid="uid://4m8fhwgas4xt"]
+
+[ext_resource type="Script" uid="uid://1u10hiedxhyi" path="res://scripts/inventory.gd" id="1_psafj"]
+[ext_resource type="Texture2D" uid="uid://dvuurxp80kqc5" path="res://assets/hud.png" id="2_0xmy5"]
+[ext_resource type="Texture2D" uid="uid://lb4q84g6h33s" path="res://assets/game2/characters/main character/portrait female.png" id="3_5tt2m"]
+[ext_resource type="Texture2D" uid="uid://bsiycqeegcx4k" path="res://assets/game2/items&objects/Crop_Spritesheet.png" id="4_dw5ng"]
+[ext_resource type="Texture2D" uid="uid://c50cp4fnhbkhj" path="res://assets/coinp.webp" id="6_0xmy5"]
+[ext_resource type="Script" uid="uid://bt0pg3qe6jrmx" path="res://scripts/howmanycorn.gd" id="6_k86sa"]
+[ext_resource type="Texture2D" uid="uid://cwbkdd1ogv2dy" path="res://assets/Corn_Seeds.png" id="6_sr8g6"]
+[ext_resource type="LabelSettings" uid="uid://cf12a5bofd0vx" path="res://inventory.tres" id="6_tla8l"]
+[ext_resource type="Script" uid="uid://cfn3tc75eien" path="res://scripts/howmanytomato.gd" id="6_ylenm"]
+[ext_resource type="Script" uid="uid://bniothusx22js" path="res://scripts/howmanypotato.gd" id="7_0df5h"]
+[ext_resource type="Texture2D" uid="uid://b2e01cd1vd71b" path="res://assets/Eggplant_Seeds.png" id="7_p7iul"]
+[ext_resource type="Script" uid="uid://crkflf3wh86rw" path="res://howmanyeggplant.gd" id="8_fiysm"]
+[ext_resource type="Texture2D" uid="uid://8b3qw2lus0hw" path="res://Potato_Seeds.png" id="8_td2ew"]
+[ext_resource type="Texture2D" uid="uid://bdy26s8wyvm3t" path="res://assets/Tomato_Seeds.png" id="9_ylenm"]
+[ext_resource type="Script" uid="uid://cplnoio6m3rcx" path="res://scripts/howmanycornseed.gd" id="11_40feg"]
+[ext_resource type="LabelSettings" uid="uid://dkqd3i7s8h17a" path="res://padraolable.tres" id="12_w24ly"]
+[ext_resource type="Script" uid="uid://dybahh6b0t2eg" path="res://scripts/howmanyeggplantseed.gd" id="13_tla8l"]
+[ext_resource type="Script" uid="uid://b4bnetdmnisl1" path="res://scripts/howmanypotatoseed.gd" id="15_w24ly"]
+[ext_resource type="Script" uid="uid://civ4t700edir3" path="res://howmanytomatoseed.gd" id="17_ohgsq"]
+[ext_resource type="Script" uid="uid://c6kqw216go5ga" path="res://selectomatoseed.gd" id="18_w24ly"]
+[ext_resource type="Script" uid="uid://bat2a06anlopx" path="res://scripts/selectcornseed.gd" id="19_ohgsq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0xmy5"]
+font_size = 27
+
+[sub_resource type="LabelSettings" id="LabelSettings_ormsd"]
+font_size = 150
+font_color = Color(0.9764706, 0.7254902, 0.007843138, 1)
+shadow_color = Color(0, 0, 0, 0.558)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w24ly"]
+size = Vector2(18.5, 22.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohgsq"]
+size = Vector2(45.60031, 64.00003)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5tt2m"]
+size = Vector2(226.5, 6)
+
+[node name="inventory" type="Area2D"]
+script = ExtResource("1_psafj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 509.0
+offset_top = 481.0
+offset_right = 549.0
+offset_bottom = 521.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect"]
+position = Vector2(42.99999, 17.999992)
+scale = Vector2(0.24772134, 0.2675425)
+texture = ExtResource("2_0xmy5")
+region_rect = Rect2(39.193207, 25.574112, 993.4729, 532.845)
+
+[node name="Label" type="Label" parent="ColorRect/Sprite2D"]
+offset_left = -76.699066
+offset_top = -149.50899
+offset_right = 92.300934
+offset_bottom = -112.50899
+text = "INVENTARIO "
+label_settings = SubResource("LabelSettings_0xmy5")
+
+[node name="coin" type="Sprite2D" parent="ColorRect/Sprite2D"]
+position = Vector2(270.46533, -93.44299)
+scale = Vector2(0.16445424, 0.15304919)
+texture = ExtResource("6_0xmy5")
+region_enabled = true
+region_rect = Rect2(0, 0, 201.10008, 201.50009)
+
+[node name="Label2" type="Label" parent="ColorRect/Sprite2D/coin"]
+offset_left = 122.73269
+offset_top = -97.687004
+offset_right = 293.7327
+offset_bottom = 107.312996
+text = "35"
+label_settings = SubResource("LabelSettings_ormsd")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ColorRect"]
+position = Vector2(-3.0000067, -16.999992)
+scale = Vector2(0.17187506, 0.16796882)
+texture = ExtResource("3_5tt2m")
+
+[node name="corn" type="Sprite2D" parent="ColorRect"]
+position = Vector2(-50, 15)
+scale = Vector2(1.1875, 1.125)
+texture = ExtResource("4_dw5ng")
+region_enabled = true
+region_rect = Rect2(0, 143.40297, 16.339092, 16.59703)
+
+[node name="howmanycorn" type="Label" parent="ColorRect/corn"]
+offset_left = 3.3684163
+offset_right = 13.842079
+offset_bottom = 14.0
+text = "0"
+label_settings = ExtResource("6_tla8l")
+script = ExtResource("6_k86sa")
+
+[node name="tomato" type="Sprite2D" parent="ColorRect"]
+position = Vector2(-23, 16)
+scale = Vector2(1.1875, 1.1875)
+texture = ExtResource("4_dw5ng")
+region_enabled = true
+region_rect = Rect2(0, 32.327652, 16.376873, 16.539806)
+
+[node name="howmanytomato" type="Label" parent="ColorRect/tomato"]
+offset_left = 4.0
+offset_right = 44.0
+offset_bottom = 23.0
+text = "0"
+label_settings = ExtResource("6_tla8l")
+script = ExtResource("6_ylenm")
+
+[node name="potato" type="Sprite2D" parent="ColorRect"]
+position = Vector2(5.75, 15)
+scale = Vector2(1.2058823, 1.2222222)
+texture = ExtResource("4_dw5ng")
+region_enabled = true
+region_rect = Rect2(0, 110.68425, 17.007233, 18.193787)
+
+[node name="howmanypotato" type="Label" parent="ColorRect/potato"]
+offset_left = 0.20733261
+offset_right = 40.207333
+offset_bottom = 22.999992
+text = "0"
+label_settings = ExtResource("6_tla8l")
+script = ExtResource("7_0df5h")
+
+[node name="eggplant" type="Sprite2D" parent="ColorRect"]
+position = Vector2(32.25, 14.5)
+scale = Vector2(1.1470588, 1.1875)
+texture = ExtResource("4_dw5ng")
+region_enabled = true
+region_rect = Rect2(0, 47.038734, 17.248398, 16.730492)
+
+[node name="howmanyeggplant" type="Label" parent="ColorRect/eggplant"]
+offset_left = 0.6538534
+offset_top = -0.4210527
+offset_right = 40.653854
+offset_bottom = 22.578947
+text = "0"
+label_settings = ExtResource("6_tla8l")
+script = ExtResource("8_fiysm")
+
+[node name="eggplantseed" type="Sprite2D" parent="ColorRect"]
+position = Vector2(30.999994, 44.00002)
+scale = Vector2(0.37355027, 0.36273518)
+texture = ExtResource("7_p7iul")
+
+[node name="howmanyeggplantseed" type="Label" parent="ColorRect/eggplantseed"]
+offset_left = 10.708064
+offset_top = 8.270496
+offset_right = 50.708065
+offset_bottom = 35.270496
+text = "0"
+label_settings = ExtResource("12_w24ly")
+script = ExtResource("13_tla8l")
+
+[node name="potatoseed" type="Sprite2D" parent="ColorRect"]
+position = Vector2(4.000018, 44.00001)
+scale = Vector2(0.416666, 0.3750003)
+texture = ExtResource("8_td2ew")
+
+[node name="howmanypotatoseed" type="Label" parent="ColorRect/potatoseed"]
+offset_left = 7.2000113
+offset_top = 7.9999933
+offset_right = 47.200012
+offset_bottom = 34.999992
+text = "0"
+label_settings = ExtResource("12_w24ly")
+script = ExtResource("15_w24ly")
+
+[node name="selectcornseed" type="Area2D" parent="ColorRect"]
+position = Vector2(-509, -481)
+script = ExtResource("19_ohgsq")
+
+[node name="cornseed" type="Sprite2D" parent="ColorRect/selectcornseed"]
+position = Vector2(459, 526)
+scale = Vector2(0.42708302, 0.37760395)
+texture = ExtResource("6_sr8g6")
+
+[node name="howmanycornseed" type="Label" parent="ColorRect/selectcornseed/cornseed"]
+offset_left = 7.024395
+offset_top = 5.2965546
+offset_right = 47.024395
+offset_bottom = 32.296555
+text = "0"
+label_settings = ExtResource("12_w24ly")
+script = ExtResource("11_40feg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/selectcornseed"]
+position = Vector2(460, 525)
+shape = SubResource("RectangleShape2D_w24ly")
+
+[node name="selectomatoseed" type="Area2D" parent="ColorRect"]
+position = Vector2(-22, 45)
+scale = Vector2(0.41666496, 0.37500018)
+script = ExtResource("18_w24ly")
+
+[node name="tomatoseed" type="Sprite2D" parent="ColorRect/selectomatoseed"]
+scale = Vector2(1, 0.9999998)
+texture = ExtResource("9_ylenm")
+
+[node name="howmanytomatoseed" type="Label" parent="ColorRect/selectomatoseed/tomatoseed"]
+offset_left = 4.8000197
+offset_top = 5.3333306
+offset_right = 44.80002
+offset_bottom = 32.333332
+text = "0"
+label_settings = ExtResource("12_w24ly")
+script = ExtResource("17_ohgsq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/selectomatoseed"]
+position = Vector2(1.9431114e-05, -2.666706)
+scale = Vector2(1, 0.9999998)
+shape = SubResource("RectangleShape2D_ohgsq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(554, 456)
+shape = SubResource("RectangleShape2D_5tt2m")
+
+[connection signal="input_event" from="ColorRect/selectcornseed" to="ColorRect/selectcornseed" method="_on_input_event"]
+[connection signal="input_event" from="ColorRect/selectomatoseed" to="ColorRect/selectomatoseed" method="_on_input_event"]

@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://pc1ut6y3b4qq"]
 
-[ext_resource type="Texture2D" uid="uid://bw0x5s4mv44qr" path="res://assets/game2/tilemaps/spring tilemap.png" id="2_h7vrm"]
+[ext_resource type="Texture2D" uid="uid://dawsm8ehtk2n0" path="res://assets/game2/tilemaps/summer tilemap.png" id="1_qh4eu"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i0wim"]
-texture = ExtResource("2_h7vrm")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1hcuu"]
+texture = ExtResource("1_qh4eu")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -12,6 +12,7 @@ texture = ExtResource("2_h7vrm")
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
+3:1/0 = 0
 4:1/0 = 0
 5:1/0 = 0
 6:1/0 = 0
@@ -57,21 +58,29 @@ texture = ExtResource("2_h7vrm")
 6:6/0 = 0
 7:6/0 = 0
 8:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
 2:7/0 = 0
 3:7/0 = 0
 4:7/0 = 0
 5:7/0 = 0
+5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:7/0 = 0
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:7/0 = 0
+7:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:7/0 = 0
 9:7/0 = 0
 0:8/0 = 0
 1:8/0 = 0
 2:8/0 = 0
-3:8/0 = 0
 4:8/0 = 0
+5:8/0 = 0
+5:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:8/0 = 0
+6:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:8/0 = 0
+7:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:8/0 = 0
 9:8/0 = 0
 0:9/0 = 0
@@ -80,14 +89,19 @@ texture = ExtResource("2_h7vrm")
 3:9/0 = 0
 4:9/0 = 0
 5:9/0 = 0
+5:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:9/0 = 0
+6:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:9/0 = 0
+7:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:9/0 = 0
 9:9/0 = 0
 0:10/0 = 0
 1:10/0 = 0
 2:10/0 = 0
 3:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
 7:10/0 = 0
 8:10/0 = 0
 9:10/0 = 0
@@ -95,10 +109,6 @@ texture = ExtResource("2_h7vrm")
 1:11/0 = 0
 2:11/0 = 0
 3:11/0 = 0
-4:11/0 = 0
-5:11/0 = 0
-6:11/0 = 0
-7:11/0 = 0
 0:12/0 = 0
 1:12/0 = 0
 2:12/0 = 0
@@ -119,10 +129,14 @@ texture = ExtResource("2_h7vrm")
 1:14/0 = 0
 2:14/0 = 0
 3:14/0 = 0
-3:1/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
 
 [resource]
+physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Grass Terrain 2"
 terrain_set_0/terrain_0/color = Color(0.7803414, 0.10717515, 0.44628996, 1)
-sources/3 = SubResource("TileSetAtlasSource_i0wim")
+sources/1 = SubResource("TileSetAtlasSource_1hcuu")
