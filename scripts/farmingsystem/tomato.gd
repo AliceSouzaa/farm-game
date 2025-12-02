@@ -1,19 +1,13 @@
 extends Area2D
 
 var isnear = false
+var isplanted = false
+var pickveggies = false
 
 func _ready() -> void:
-
-	hide()
-
-
-
-func _process(delta: float) -> void:
-	$CanvasLayer/Label.text = str("tomate = ",Globalvar.seed)
-	$CanvasLayer/Label2.text = str("milho = ", Globalvar.cornseed)
-	if isnear == true and Globalvar.seed > 0 and Input.is_action_just_pressed("click_left") and Globalvar.isplanted == false:
-		Globalvar.seed -=1
-		Globalvar.isplanted = true
+	if isplanted == false and pickveggies == false:
+		Globalvar.tomatoseed -=1
+		isplanted = true
 		show()
 		$AnimatedSprite2D.frame = 0
 		await get_tree().create_timer(3.0).timeout
@@ -23,12 +17,15 @@ func _process(delta: float) -> void:
 		await get_tree().create_timer(3.0).timeout
 		$AnimatedSprite2D.frame = 3
 		await get_tree().create_timer(3.0).timeout
-		$AnimatedSprite2D.frame = 4
-		await get_tree().create_timer(3.0).timeout
 		$AnimatedSprite2D.frame = 5
-		Globalvar.isplanted = false
+		pickveggies = true
+		isplanted = false
+		
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("pickveggies") and pickveggies == true and isnear == true:
+			queue_free()
+			Globalvar.tomato +=1
 			
-
 func _on_body_entered(body: Node2D) -> void:
 	isnear = true
 

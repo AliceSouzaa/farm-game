@@ -28,10 +28,8 @@ func _process(delta: float) -> void:
 		queue_free()
 		Globalvar.corn +=1
 
-
 func _on_body_entered(body: Node2D) -> void:
 	isnear = true
-
 
 func _on_body_exited(body: Node2D) -> void:
 	isnear = false
